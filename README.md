@@ -1,5 +1,7 @@
 # SpecGuard
 
+![SpecGuard Tests](https://github.com/kavyap2026-lab/specguard/actions/workflows/tests.yml/badge.svg)
+
 **Automated Requirement Coverage & Change Impact Analysis for QA**
 
 SpecGuard is a Python-based QA engineering tool that connects software requirements with automated test cases. It helps identify untested requirements and shows which tests may need review when a requirement changes.
