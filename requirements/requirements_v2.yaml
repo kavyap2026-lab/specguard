@@ -1,0 +1,57 @@
+version: "2.0"
+
+requirements:
+
+  - id: REQ-001
+    title: Standard customer return period
+    description: >
+      Standard customers may return eligible products
+      within 14 days of purchase.
+    category: returns
+    priority: high
+
+  - id: REQ-002
+    title: Premium customer return period
+    description: >
+      Premium customers may return eligible products
+      within 45 days of purchase.
+    category: returns
+    priority: high
+
+  - id: REQ-003
+    title: Return quantity validation
+    description: >
+      Return quantity must be at least 1.
+    category: validation
+    priority: high
+
+  - id: REQ-004
+    title: Future purchase date
+    description: >
+      A purchase date cannot be in the future.
+    category: validation
+    priority: high
+
+  - id: REQ-005
+    title: Standard warranty period
+    description: >
+      Products are covered by warranty for 365 days
+      from the purchase date.
+    category: warranty
+    priority: high
+
+  - id: REQ-006
+    title: Damaged product return
+    description: >
+      Products reported as physically damaged cannot
+      use the normal return process.
+    category: returns
+    priority: medium
+
+  - id: REQ-007
+    title: Unknown customer type validation
+    description: >
+      The system must reject return requests
+      containing an unsupported customer type.
+    category: validation
+    priority: high

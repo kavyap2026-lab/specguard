@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SpecGuard QA Report</title>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f6f8;
+        color: #1f2937;
+    }
+
+    .container {
+        width: 92%;
+        max-width: 1200px;
+        margin: 40px auto;
+    }
+
+    .header {
+        margin-bottom: 30px;
+    }
+
+    .header h1 {
+        margin-bottom: 8px;
+    }
+
+    .header p {
+        color: #6b7280;
+        margin-top: 0;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        margin-bottom: 35px;
+    }
+
+    .card {
+        background: white;
+        padding: 22px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .card .label {
+        color: #6b7280;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .card .value {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .section {
+        background: white;
+        padding: 24px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th {
+        text-align: left;
+        background: #f9fafb;
+        padding: 12px;
+        border-bottom: 2px solid #e5e7eb;
+    }
+
+    td {
+        padding: 12px;
+        border-bottom: 1px solid #e5e7eb;
+        vertical-align: top;
+    }
+
+    .covered {
+        font-weight: bold;
+        color: #15803d;
+    }
+
+    .missing {
+        font-weight: bold;
+        color: #b91c1c;
+    }
+
+    .change-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .change-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .badge {
+        padding: 7px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .reviewed {
+        background: #dcfce7;
+        color: #166534;
+    }
+
+    .review-required {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+    .comparison {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 15px;
+    }
+
+    .comparison div {
+        background: #f9fafb;
+        padding: 16px;
+        border-radius: 7px;
+    }
+
+    .no-changes {
+        padding: 18px;
+        background: #f9fafb;
+        border-radius: 7px;
+    }
+
+    @media (max-width: 800px) {
+
+        .cards {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .comparison {
+            grid-template-columns: 1fr;
+        }
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>SpecGuard</h1>
+        <p>Automated Requirement Coverage & Change Impact Analysis</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="label">Total Requirements</div>
+            <div class="value">7</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Coverage</div>
+            <div class="value">100.0%</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Missing Requirements</div>
+            <div class="value">0</div>
+        </div>
+
+        <div class="card">
+            <div class="label">Modified Requirements</div>
+            <div class="value">1</div>
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Requirement Traceability</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Requirement</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Tests</th>
+                    <th>Mapped Test Cases</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                
+        <tr>
+            <td>REQ-001</td>
+            <td>Standard customer return period</td>
+            <td>HIGH</td>
+            <td class="covered">
+                COVERED
+            </td>
+            <td>3</td>
+            <td>test_standard_return_before_boundary<br>test_standard_return_at_boundary<br>test_standard_return_after_boundary</td>
+        </tr>
+        
+        <tr>
+            <td>REQ-002</td>
+            <td>Premium customer return period</td>
+            <td>HIGH</td>
+            <td class="covered">
+                COVERED
+            </td>
+            <td>3</td>
+            <td>test_premium_return_before_boundary<br>test_premium_return_at_boundary<br>test_premium_return_after_boundary</td>
+        </tr>
+        
+        <tr>
+            <td>REQ-003</td>
+            <td>Return quantity validation</td>
+            <td>HIGH</td>
+            <td class="covered">
+                COVERED
+            </td>
+            <td>3</td>
+            <td>test_return_quantity_zero<br>test_return_quantity_one<br>test_return_quantity_negative</td>
+        </tr>
+        
+        <tr>
+            <td>REQ-004</td>
+            <td>Future purchase date</td>
+            <td>HIGH</td>
+            <td class="covered">
+                COVERED
+            </td>
+            <td>3</td>
+            <td>test_future_purchase_date<br>test_purchase_today<br>test_warranty_future_purchase_date</td>
+        </tr>
+        
+        <tr>
+            <td>REQ-005</td>
+            <td>Standard warranty period</td>
+            <td>HIGH</td>
+            <td class="covered">
+                COVERED
+            </td>
+            <td>3</td>
+            <td>test_warranty_before_expiry<br>test_warranty_at_expiry_boundary<br>test_warranty_after_expiry</td>
+        </tr>
+        
+        <tr>
+            <td>REQ-006</td>
+            <td>Damaged product return</td>
+            <td>MEDIUM</td>
+            <td class="covered">
+                COVERED
+            </td>
+            <td>2</td>
+            <td>test_damaged_product_normal_return<br>test_non_damaged_product_normal_return</td>
+        </tr>
+        
+        <tr>
+            <td>REQ-007</td>
+            <td>Unknown customer type validation</td>
+            <td>HIGH</td>
+            <td class="covered">
+                COVERED
+            </td>
+            <td>1</td>
+            <td>test_invalid_customer_type</td>
+        </tr>
+        
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Change Impact Analysis</h2>
+
+        <p>
+            Added: 0
+            &nbsp; | &nbsp;
+            Removed: 0
+            &nbsp; | &nbsp;
+            Modified: 1
+        </p>
+
+        
+        <div class="change-card">
+            <div class="change-header">
+                <h3>REQ-002</h3>
+                <span class="badge reviewed">
+                    REVIEWED
+                </span>
+            </div>
+
+            <div class="comparison">
+                <div>
+                    <h4>Old Requirement</h4>
+                    <p>Premium customers may return eligible products within 30 days of purchase.</p>
+                </div>
+
+                <div>
+                    <h4>New Requirement</h4>
+                    <p>Premium customers may return eligible products within 45 days of purchase.</p>
+                </div>
+            </div>
+
+            <h4>Impacted Tests (3)</h4>
+
+            <ul>
+                <li>test_premium_return_before_boundary</li><li>test_premium_return_at_boundary</li><li>test_premium_return_after_boundary</li>
+            </ul>
+        </div>
+        
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
